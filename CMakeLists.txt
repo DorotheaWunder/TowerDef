@@ -29,7 +29,9 @@ else()
     message(STATUS "Using local ${LIB1}")
 endif()
 
-add_executable(TowerDef main.cpp)
+add_executable(TowerDef main.cpp
+        Sprites.h
+        Sprites.cpp)
 
 # set the include directory
 target_include_directories(TowerDef PRIVATE ${raylib_INCLUDE_DIRS})
