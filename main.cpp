@@ -1,13 +1,21 @@
 ﻿#include <iostream>
 #include "raylib.h"
 #include "sprites.h"
+#include "Terrain.h"
+#include "Character.h"
 
 int main()
 {
     InitWindow(1200, 800, "Tower Defence");
+    SetTargetFPS(60);
 
-    Sprite test("../Assets/Textures/Tiles/Tileset.png", 100,100, 256, 256);
-    //C:\CLionProjects\TowerDef\Assets\Textures\Tiles
+
+
+    Terrain snow("../Assets/Textures/Tiles/spritesheetMulti.png", 100, 100, 256, 384, SNOW);
+    Terrain grass("../Assets/Textures/Tiles/spritesheetMulti.png", 400, 100, 256, 384, GRASS);
+
+    Character hero("../Assets/Textures/Tiles/spritesheetMulti.png", 400, 100, 256, 384, PLAYER_PALADIN);
+
     while (!WindowShouldClose())
     {
 
@@ -15,7 +23,10 @@ int main()
         ClearBackground(BLACK);
 
 
-        test.Draw();
+
+        snow.Draw();
+        grass.Draw();
+        hero.Draw();
 
 
         EndDrawing();

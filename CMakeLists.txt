@@ -31,7 +31,11 @@ endif()
 
 add_executable(TowerDef main.cpp
         Sprites.h
-        Sprites.cpp)
+        Sprites.cpp
+        Terrain.h
+        Terrain.cpp
+        Character.h
+        Character.cpp)
 
 # set the include directory
 target_include_directories(TowerDef PRIVATE ${raylib_INCLUDE_DIRS})

@@ -18,7 +18,3 @@ void Sprite::Draw()
     DrawTexturePro(texture, sourceRect, destRect, {0,0}, 0.0f, WHITE);
 }
 
-void Sprite::Unload()
-{
-    UnloadTexture(texture);
-}

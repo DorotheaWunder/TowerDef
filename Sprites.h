@@ -1,20 +1,23 @@
-﻿#include "raylib.h"
-
-#pragma once
+﻿#pragma once
+#include "raylib.h"
 
 class Sprite
 {
 public:
+
+    static const int WIDTH = 256;
+    static const int HEIGHT = 384;
+
     Sprite(const char* fileName, int x, int y, int width, int height);
     ~Sprite();
 
     void Draw();
-    void Unload();
+
+    Rectangle sourceRect;
+    Rectangle destRect;
 
 private:
     Texture2D texture;
-    Rectangle sourceRect;
-    Rectangle destRect;
 };
 
 
