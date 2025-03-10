@@ -11,10 +11,10 @@ int main()
 
 
 
-    Terrain snow("../Assets/Textures/Tiles/spritesheetMulti.png", 100, 100, 256, 384, SNOW);
-    Terrain grass("../Assets/Textures/Tiles/spritesheetMulti.png", 400, 100, 256, 384, GRASS);
+    Terrain snow("../Assets/Textures/Tiles/spritesheetMulti.png", 100, 100, 256, 384, 0.5f, SNOW);
+    Terrain grass("../Assets/Textures/Tiles/spritesheetMulti.png", 400, 100, 256, 384, 0.5f,  GRASS);
 
-    Character hero("../Assets/Textures/Tiles/spritesheetMulti.png", 400, 100, 256, 384, PLAYER_PALADIN);
+    Character hero("../Assets/Textures/Tiles/spritesheetMulti.png", 400, 100, 256, 384, 0.5f,  PLAYER_PALADIN);
 
     while (!WindowShouldClose())
     {

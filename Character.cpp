@@ -1,8 +1,8 @@
 ﻿#include "character.h"
 #include "raylib.h"
 
-Character::Character(const char* fileName, int x, int y, int width, int height, CharacterType type)
-    : sprite(fileName, x, y, width, height), type(type)
+Character::Character(const char* fileName, int x, int y, int width, int height, float scale, CharacterType type)
+    : sprite(fileName, x, y, width, height, scale), type(type)
 {
     SetSourceRect();
 }

@@ -19,7 +19,7 @@ class Terrain
 public:
     TerrainType type;
 
-    Terrain(const char* fileName, int x, int y, int width, int height, TerrainType type);
+    Terrain(const char* fileName, int x, int y, int width, int height, float scale,  TerrainType type);
     ~Terrain();
 
     void Draw();

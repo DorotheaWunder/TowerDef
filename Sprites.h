@@ -8,7 +8,7 @@ public:
     static const int WIDTH = 256;
     static const int HEIGHT = 384;
 
-    Sprite(const char* fileName, int x, int y, int width, int height);
+    Sprite(const char* fileName, int x, int y, int width, int height, float scale);
     ~Sprite();
 
     void Draw();

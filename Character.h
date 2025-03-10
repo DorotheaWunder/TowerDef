@@ -18,7 +18,7 @@ class Character
 public:
     Sprite sprite;
 
-    Character(const char* fileName, int x, int y, int width, int height, CharacterType type);
+    Character(const char* fileName, int x, int y, int width, int height, float scale, CharacterType type);
     ~Character();
 
     void Draw();

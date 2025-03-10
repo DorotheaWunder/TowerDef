@@ -1,8 +1,9 @@
 ﻿#include "terrain.h"
+#include "sprites.h"
 #include "raylib.h"
 
-Terrain::Terrain(const char* fileName, int x, int y, int width, int height, TerrainType type)
-    : sprite(fileName, x, y, width, height), type(type)
+Terrain::Terrain(const char* fileName, int x, int y, int width, int height, float scale, TerrainType type)
+    : sprite(fileName, x, y, width, height, scale), type(type)
 {
     SetSourceRect();
 }
