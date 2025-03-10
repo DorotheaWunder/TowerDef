@@ -1143,8 +1143,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "C:/Users/Administrat\u00f6r/CLionProjects/TowerDef/cmake-build-debug",
-		"source" : "C:/Users/Administrat\u00f6r/CLionProjects/TowerDef"
+		"build" : "C:/CLionProjects/TowerDef/cmake-build-debug",
+		"source" : "C:/CLionProjects/TowerDef"
 	},
 	"version" : 
 	{

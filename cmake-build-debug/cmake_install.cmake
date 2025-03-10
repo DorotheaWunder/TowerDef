@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Administratör/CLionProjects/TowerDef
+# Install script for directory: C:/CLionProjects/TowerDef
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Administratör/CLionProjects/TowerDef/cmake-build-debug/_deps/raylib-build/cmake_install.cmake")
+  include("C:/CLionProjects/TowerDef/cmake-build-debug/_deps/raylib-build/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -57,6 +57,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "C:/Users/Administratör/CLionProjects/TowerDef/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "C:/CLionProjects/TowerDef/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

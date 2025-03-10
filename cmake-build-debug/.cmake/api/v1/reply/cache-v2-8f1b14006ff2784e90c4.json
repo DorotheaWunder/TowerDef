@@ -79,7 +79,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/Administrat\u00f6r/CLionProjects/TowerDef/cmake-build-debug"
+			"value" : "c:/CLionProjects/TowerDef/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -599,7 +599,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Administrat\u00f6r/CLionProjects/TowerDef/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/CLionProjects/TowerDef/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -683,7 +683,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/Administrat\u00f6r/CLionProjects/TowerDef"
+			"value" : "C:/CLionProjects/TowerDef"
 		},
 		{
 			"name" : "CMAKE_INSTALL_BINDIR",
@@ -1735,7 +1735,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Users/Administrat\u00f6r/CLionProjects/TowerDef/cmake-build-debug/_deps"
+			"value" : "C:/CLionProjects/TowerDef/cmake-build-debug/_deps"
 		},
 		{
 			"name" : "FETCHCONTENT_FULLY_DISCONNECTED",
@@ -1835,7 +1835,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Administrat\u00f6r/CLionProjects/TowerDef/cmake-build-debug/_deps/raylib-build/raylib/external/glfw"
+			"value" : "C:/CLionProjects/TowerDef/cmake-build-debug/_deps/raylib-build/raylib/external/glfw"
 		},
 		{
 			"name" : "GLFW_BUILD_DOCS",
@@ -1979,7 +1979,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Administrat\u00f6r/CLionProjects/TowerDef/cmake-build-debug/_deps/raylib-src/src/external/glfw"
+			"value" : "C:/CLionProjects/TowerDef/cmake-build-debug/_deps/raylib-src/src/external/glfw"
 		},
 		{
 			"name" : "GLFW_USE_HYBRID_HPG",
@@ -2139,7 +2139,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Administrat\u00f6r/CLionProjects/TowerDef/cmake-build-debug"
+			"value" : "C:/CLionProjects/TowerDef/cmake-build-debug"
 		},
 		{
 			"name" : "TowerDef_IS_TOP_LEVEL",
@@ -2163,7 +2163,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Administrat\u00f6r/CLionProjects/TowerDef"
+			"value" : "C:/CLionProjects/TowerDef"
 		},
 		{
 			"name" : "USE_EXTERNAL_GLFW",
@@ -2239,7 +2239,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Administrat\u00f6r/CLionProjects/TowerDef/cmake-build-debug/_deps/raylib-build/raylib"
+			"value" : "C:/CLionProjects/TowerDef/cmake-build-debug/_deps/raylib-build/raylib"
 		},
 		{
 			"name" : "raylib_DIR",
@@ -2287,7 +2287,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Administrat\u00f6r/CLionProjects/TowerDef/cmake-build-debug/_deps/raylib-src/src"
+			"value" : "C:/CLionProjects/TowerDef/cmake-build-debug/_deps/raylib-src/src"
 		}
 	],
 	"kind" : "cache",

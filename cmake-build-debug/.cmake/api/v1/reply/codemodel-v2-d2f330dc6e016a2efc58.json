@@ -151,21 +151,21 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "TowerDef::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-TowerDef-Debug-a38f1da0bae1586119d0.json",
+					"jsonFile" : "target-TowerDef-Debug-961541f46f1979fe55e3.json",
 					"name" : "TowerDef",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "glfw::@9de86fbe87260ae8e66c",
-					"jsonFile" : "target-glfw-Debug-d247fd45960ebb756468.json",
+					"jsonFile" : "target-glfw-Debug-91e0ec500ba8b6c21750.json",
 					"name" : "glfw",
 					"projectIndex" : 2
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "raylib::@4dc3a4644cf4ded08c01",
-					"jsonFile" : "target-raylib-Debug-f0a0aa67430693c4ad2a.json",
+					"jsonFile" : "target-raylib-Debug-d8a9afe7817652e95367.json",
 					"name" : "raylib",
 					"projectIndex" : 1
 				},
@@ -189,8 +189,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/Administrat\u00f6r/CLionProjects/TowerDef/cmake-build-debug",
-		"source" : "C:/Users/Administrat\u00f6r/CLionProjects/TowerDef"
+		"build" : "C:/CLionProjects/TowerDef/cmake-build-debug",
+		"source" : "C:/CLionProjects/TowerDef"
 	},
 	"version" : 
 	{
