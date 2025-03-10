@@ -1,9 +1,13 @@
 ﻿#include "sprites.h"
 #include "raylib.h"
+#include <iostream>
 
 Sprite::Sprite(const char* fileName, int x, int y, int width, int height, float scale)
 {
     texture = LoadTexture(fileName);
+    if (texture.id == 0) {
+        std::cerr << "Failed to load texture: " << fileName << std::endl;
+    }
     sourceRect = {0,0,(float)texture.width, (float)texture.height};
     destRect =
         {

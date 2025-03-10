@@ -1,6 +1,7 @@
 ﻿#include "terrain.h"
 #include "sprites.h"
 #include "raylib.h"
+#include <iostream>
 
 Terrain::Terrain(const char* fileName, int x, int y, int width, int height, float scale, TerrainType type)
     : sprite(fileName, x, y, width, height, scale), type(type)
@@ -12,6 +13,8 @@ Terrain::~Terrain() { }
 
 void Terrain::SetSourceRect()
 {
+    std::cout << "Setting source rect for terrain type: " << type << std::endl;
+
     Rectangle rects[] =
     {
         Rectangle{0, 0, 256, 384},
@@ -25,14 +28,6 @@ void Terrain::SetSourceRect()
     };
 
     sprite.sourceRect = rects[type];
-
-    // sprite.sourceRect = Rectangle
-    // {
-    //     static_cast<float>(sprite.WIDTH * type),
-    //     0.0f,
-    //     static_cast<float>(sprite.WIDTH),
-    //     static_cast<float>(sprite.HEIGHT)
-    // };
 }
 
 void Terrain::Draw()

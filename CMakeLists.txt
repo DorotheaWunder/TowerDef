@@ -35,7 +35,9 @@ add_executable(TowerDef main.cpp
         Terrain.h
         Terrain.cpp
         Character.h
-        Character.cpp)
+        Character.cpp
+        Map.h
+        Map.cpp)
 
 # set the include directory
 target_include_directories(TowerDef PRIVATE ${raylib_INCLUDE_DIRS})
