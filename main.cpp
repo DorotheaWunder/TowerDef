@@ -6,15 +6,14 @@ int main()
 {
     InitWindow(1200, 800, "Tower Defence");
 
-    Sprite test("assets/textures/tiles/Tileset.png", 100,100, 256, 256);
-
+    Sprite test("../Assets/Textures/Tiles/Tileset.png", 100,100, 256, 256);
+    //C:\CLionProjects\TowerDef\Assets\Textures\Tiles
     while (!WindowShouldClose())
     {
 
         BeginDrawing();
         ClearBackground(BLACK);
 
-// Falleri und Fallera - Kinder sind zum prügeln da!
 
         test.Draw();
 
