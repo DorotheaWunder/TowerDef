@@ -13,13 +13,13 @@ void Character::SetSourceRect()
 {
     Rectangle rects[] =
     {
-        Rectangle{0, 0, 256, 384},
-        Rectangle{256, 0, 256, 384},
-        Rectangle{512, 0, 256, 384},
-        Rectangle{768, 0, 256, 384},
-        Rectangle{1024, 0, 256, 384},
-        Rectangle{1280, 0, 256, 384},
-        Rectangle{1536, 0, 256, 384},
+        Rectangle{0, 384, 256, 384},
+        Rectangle{256, 384, 256, 384},
+        Rectangle{512, 384, 256, 384},
+        Rectangle{768, 384, 256, 384},
+        Rectangle{1024, 384, 256, 384},
+        Rectangle{1280, 384, 256, 384},
+        Rectangle{1536, 384, 256, 384},
 
     };
 
