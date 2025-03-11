@@ -46,7 +46,28 @@ void Map::Initialize()
             }
         }
     }
+    PlaceCastle();
 }
+
+void Map::PlaceCastle()
+{
+    int middleX = ROW / 2;
+    int middleY = COL / 2;
+
+    delete grid[middleX][middleY];
+
+    grid[middleX][middleY] = new Terrain
+    (
+        "../Assets/Textures/Tiles/spritesheetMulti.png",
+                    middleX * TILE_WIDTH,
+                    middleY * TILE_HEIGHT,
+                    256,
+                    384,
+                    SCALE,
+                    CASTLE
+    );
+}
+
 
 void Map::Draw()
 {

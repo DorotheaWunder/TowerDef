@@ -22,6 +22,7 @@ int main()
         BeginDrawing();
         ClearBackground(BLACK);
 
+
         gameMap.Draw();
 
         // snow.Draw();

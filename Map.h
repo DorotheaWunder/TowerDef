@@ -12,11 +12,14 @@ public:
     ~Map();
 
     void Initialize();
+    void PlaceCastle();
     void Draw();
 
 
 private:
     Terrain* grid[ROW][COL];
+
+    //void PlaceCastle();
 };
 
 
