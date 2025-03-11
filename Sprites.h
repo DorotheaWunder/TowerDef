@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "raylib.h"
+#include <string>
 
 class Sprite
 {
@@ -17,6 +18,7 @@ public:
     Rectangle destRect;
 
 private:
+    std::string texturePath;
     Texture2D texture;
 };
 

@@ -1,13 +1,18 @@
 ﻿#include "sprites.h"
 #include "raylib.h"
+#include "ResourceManager.h"
 #include <iostream>
 
 Sprite::Sprite(const char* fileName, int x, int y, int width, int height, float scale)
+    : texturePath(fileName)
 {
-    texture = LoadTexture(fileName);
-    if (texture.id == 0) {
+    texture = TextureManager::GetInstance().GetTexture(texturePath);
+
+    if (texture.id == 0)
+    {
         std::cerr << "Failed to load texture: " << fileName << std::endl;
     }
+
     sourceRect = {0,0,(float)texture.width, (float)texture.height};
     destRect =
         {
@@ -20,7 +25,7 @@ Sprite::Sprite(const char* fileName, int x, int y, int width, int height, float 
 
 Sprite::~Sprite()
 {
-    UnloadTexture(texture);
+    TextureManager::GetInstance().UnloadTexture(texturePath);
 }
 
 void Sprite::Draw()

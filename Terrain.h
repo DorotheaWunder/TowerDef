@@ -9,7 +9,7 @@ enum TerrainType
     MOUNTAINS,
     CASTLE,
     FOREST,
-    JUNGLE,
+    SWAMP,
     GRASS,
     WATER
 };

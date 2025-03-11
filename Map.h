@@ -5,8 +5,8 @@
 class Map
 {
 public:
-    static const int ROW = 5;
-    static const int COL = 5;
+    static const int ROW = 23;
+    static const int COL = 11;
 
     Map();
     ~Map();
