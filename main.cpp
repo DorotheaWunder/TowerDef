@@ -3,6 +3,7 @@
 #include "Terrain.h"
 #include "Map.h"
 #include "Character.h"
+#include "pathfinding.h"
 
 int main()
 {
@@ -11,10 +12,17 @@ int main()
 
     Map gameMap;
 
+    bool pathGenerated = false;
+    Pathfinding pathfinder(Map::ROW - 1 , Map::COL -1);
+
+    int startX = 0, startY = 0;
+    int endX = Map::ROW, endY = Map::COL;
+
+
     // Terrain snow("../Assets/Textures/Tiles/spritesheetMulti.png", 100, 100, 256, 384, 0.3f, SNOW);
-    // Terrain grass("../Assets/Textures/Tiles/spritesheetMulti.png", 400, 100, 256, 384, 0.3f,  CASTLE);
+    Terrain grass("../Assets/Textures/Tiles/spritesheetMulti.png", 400, 100, 256, 384, 0.3f,  SWAMP);
     //
-    // Character hero("../Assets/Textures/Tiles/spritesheetMulti.png", 400, 100, 256, 384, 0.3f,  PLAYER_KING);
+    Character hero("../Assets/Textures/Tiles/spritesheetMulti.png", 400, 100, 256, 384, 0.3f,  PLAYER_PALADIN);
 
     while (!WindowShouldClose())
     {
@@ -24,6 +32,12 @@ int main()
 
 
         gameMap.Draw();
+
+        if (!pathGenerated)
+        {
+            pathfinder.GenerateField(startX, startY, endX, endY);
+            pathGenerated = true;
+        }
 
         // snow.Draw();
         // grass.Draw();

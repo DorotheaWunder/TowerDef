@@ -10,53 +10,60 @@ const int TILE_HEIGHT = 256 * SCALE;
 
 Map::Map()
 {
-    Initialize();
+    CreateMap();
 }
 
 Map::~Map()
 {
-    for (int y = 0; y < COL; y++)
+    for (int y = 0; y < ROW; y++)
     {
-        for (int x = 0; x < ROW; x++)
+        for (int x = 0; x < COL; x++)
         {
-            delete grid[x][y];
+            delete grid[y][x];
         }
     }
 }
 
-void Map::Initialize()
+void Map::InitializeGrid()
 {
-    for (int y = 0; y < COL; y++)
+    for (int y = 0; y < ROW; y++)
     {
-        for (int x = 0; x < ROW; x++)
+        for (int x = 0; x < COL; x++)
         {
-            grid[x][y] = new Terrain
-            ("../Assets/Textures/Tiles/spritesheetMulti.png",
-            x * TILE_WIDTH,
-            y * TILE_HEIGHT,
-            256,
-            384,
-            SCALE,
-            GRASS);
-
-
-            if (grid[x][y] == nullptr)
-            {
-                std::cerr << "Failed to allocate memory for terrain at (" << x << ", " << y << ")" << std::endl;
-            }
+            grid[y][x] = nullptr;
         }
     }
-    PlaceCastle();
 }
+
+void Map::PlaceTerrain()
+{
+    for (int y = 0; y < ROW; y++)
+    {
+        for (int x = 0; x < COL; x++)
+        {
+            grid[y][x] = new Terrain
+                (
+                    "../Assets/Textures/Tiles/spritesheetMulti.png",
+                                x * TILE_WIDTH,
+                                y * TILE_HEIGHT,
+                                256,
+                                384,
+                                SCALE,
+                                GRASS
+                );
+        }
+    }
+}
+
 
 void Map::PlaceCastle()
 {
-    int middleX = ROW / 2;
-    int middleY = COL / 2;
+    int middleX = COL / 2;
+    int middleY = ROW / 2;
 
     delete grid[middleX][middleY];
 
-    grid[middleX][middleY] = new Terrain
+    grid[middleY][middleX] = new Terrain
     (
         "../Assets/Textures/Tiles/spritesheetMulti.png",
                     middleX * TILE_WIDTH,
@@ -68,14 +75,23 @@ void Map::PlaceCastle()
     );
 }
 
+void Map::CreateMap()
+{
+    InitializeGrid();
+    PlaceTerrain();
+    PlaceCastle();
+}
+
+
+
 
 void Map::Draw()
 {
-    for (int y = 0; y < COL; y++)
+    for (int y = 0; y < ROW; y++)
     {
-        for (int x = 0; x < ROW; x++)
+        for (int x = 0; x < COL; x++)
         {
-            grid[x][y]->Draw();
+            grid[y][x]->Draw();
         }
     }
 }

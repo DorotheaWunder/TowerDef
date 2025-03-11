@@ -39,6 +39,12 @@ add_executable(TowerDef main.cpp
         Map.h
         Map.cpp
         ResourceManager.h
+        Enemy.h
+        Enemy.cpp
+        GameManager.h
+        GameManager.cpp
+        Pathfinding.h
+        Pathfinding.cpp
 )
 
 # set the include directory
