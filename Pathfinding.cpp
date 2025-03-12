@@ -1,4 +1,5 @@
 ﻿#include "pathfinding.h"
+#include "target.h"
 #include <queue>
 #include <cstdlib>
 #include <ctime>
@@ -124,9 +125,11 @@ std::vector<std::pair<int,int>> Pathfinding::TrackPath(
 
 
 
-std::vector<std::pair<int, int>> Pathfinding::GenerateField(int startX, int startY, int endX, int endY)
+std::vector<std::pair<int, int>> Pathfinding::GenerateField(int startX, int startY, const Target& target)
 {
-    std::cout << "STARTING SEARCH from (" << startX << "," << startY << ") to (" << endX << "," << endY << ")" << std::endl;
+    std::cout << "STARTING SEARCH from (" << startX << "," << startY << ") for TARGET of type "
+          << static_cast<int>(target.GetTargetType()) << " at (" << target.GetGridPosition().first
+          << ", " << target.GetGridPosition().second << ")" << std::endl;
 
     ResetVisited();
 
@@ -137,18 +140,21 @@ std::vector<std::pair<int, int>> Pathfinding::GenerateField(int startX, int star
 
     wasVisited[startX][startY] = true;
 
+    std::pair<int, int> goalPosition = target.GetGridPosition();
+
     while (!frontier.empty())
     {
         std::pair<int, int> current = GetRandomFrontier(frontier);
         frontier.pop();
 
-        if (current.first == endX && current.second == endY)
+        if (current == goalPosition)
         {
-            std::cout << "THE CASTLE IS AT (" << current.first << ", " << current.second << ")" << std::endl;
-            return TrackPath(cameFrom, {startX, startY}, {endX, endY});
+            std::cout << "TARGET FOUND at (" << current.first << ", " << current.second << ")" << std::endl;
+            return TrackPath(cameFrom, {startX, startY}, goalPosition);
         }
 
         GetNeighbors(current, frontier, cameFrom);
     }
+    std::cout << "Nothing to find" << std::endl;
     return {};
 }

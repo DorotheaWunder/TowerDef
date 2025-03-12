@@ -1,12 +1,10 @@
 ﻿#include "Map.h"
 #include "Terrain.h"
-#include "raylib.h"
-#include <iostream>
+#include "Tile.h"
 
 const float SCALE = 0.3f;
 const int TILE_WIDTH = 256 * SCALE;
 const int TILE_HEIGHT = 256 * SCALE;
-//const int TILE_HEIGHT = 384 * SCALE;
 
 Map::Map()
 {
@@ -41,16 +39,7 @@ void Map::PlaceTerrain()
     {
         for (int x = 0; x < COL; x++)
         {
-            grid[y][x] = new Terrain
-                (
-                    "../Assets/Textures/Tiles/spritesheetMulti.png",
-                                x * TILE_WIDTH,
-                                y * TILE_HEIGHT,
-                                256,
-                                384,
-                                SCALE,
-                                GRASS
-                );
+            grid[y][x] = new Tile(x, y, GRASS);
         }
     }
 }
@@ -62,17 +51,7 @@ void Map::PlaceCastle()
     int middleY = ROW / 2;
 
     delete grid[middleX][middleY];
-
-    grid[middleY][middleX] = new Terrain
-    (
-        "../Assets/Textures/Tiles/spritesheetMulti.png",
-                    middleX * TILE_WIDTH,
-                    middleY * TILE_HEIGHT,
-                    256,
-                    384,
-                    SCALE,
-                    CASTLE
-    );
+    grid[middleY][middleX] = new Tile(middleX, middleY, CASTLE);
 }
 
 void Map::CreateMap()

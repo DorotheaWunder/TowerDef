@@ -2,7 +2,7 @@
 #include "raylib.h"
 
 Character::Character(const char* fileName, int x, int y, int width, int height, float scale, CharacterType type)
-    : sprite(fileName, x, y, width, height, scale), type(type)
+    : gameObject(x,y), sprite(fileName, x, y, width, height, scale), type(type)
 {
     SetSourceRect();
 }
@@ -24,17 +24,10 @@ void Character::SetSourceRect()
     };
 
     sprite.sourceRect = rects[type];
-
-    // sprite.sourceRect = Rectangle
-    // {
-    //     static_cast<float>(sprite.WIDTH * type),
-    //     0.0f,
-    //     static_cast<float>(sprite.WIDTH),
-    //     static_cast<float>(sprite.HEIGHT)
-    // };
 }
 
 void Character::Draw()
 {
     sprite.Draw();
 }
+

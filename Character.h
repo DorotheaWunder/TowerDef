@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "sprites.h"
+#include "GameObject.h"
 
 
 
@@ -22,8 +23,11 @@ public:
     ~Character();
 
     void Draw();
+    void Update();
+
 
 private:
+    GameObject gameObject;
     CharacterType type;
     void SetSourceRect();
 };

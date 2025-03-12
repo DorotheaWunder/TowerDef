@@ -13,8 +13,6 @@ Terrain::~Terrain() { }
 
 void Terrain::SetSourceRect()
 {
-    std::cout << "Setting source rect for terrain type: " << type << std::endl;
-
     Rectangle rects[] =
     {
         Rectangle{0, 0, 256, 384},

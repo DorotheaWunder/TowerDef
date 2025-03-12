@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include "target.h"
 #include <vector>
 #include <queue>
 #include <utility>
@@ -8,7 +9,7 @@ class Pathfinding
 {
 public:
     Pathfinding(int rows, int cols);
-    std::vector<std::pair<int, int>>GenerateField(int startX, int startY, int endX, int endY);
+    std::vector<std::pair<int, int>>GenerateField(int startX, int startY, const Target& target);
 
     std::pair<int, int> GetRandomTile();
     std::pair<int, int> GetRandomFrontier(std::queue<std::pair<int, int>>& frontier);
