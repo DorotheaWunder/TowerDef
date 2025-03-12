@@ -16,7 +16,7 @@ int main()
     Pathfinding pathfinder(Map::ROW - 1 , Map::COL -1);
 
     int startX = 0, startY = 0;
-    int endX = Map::ROW, endY = Map::COL;
+    int endX = Map::ROW/2, endY = Map::COL/2;
 
 
     // Terrain snow("../Assets/Textures/Tiles/spritesheetMulti.png", 100, 100, 256, 384, 0.3f, SNOW);

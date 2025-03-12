@@ -3,6 +3,8 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
+#include <map>
+#include <algorithm>
 
 Pathfinding::Pathfinding(int rows, int cols)
     :ROW(rows), COL(cols), wasVisited(rows, std::vector<bool>(cols, false))
@@ -43,7 +45,10 @@ void Pathfinding::ResetVisited()
     }
 }
 
-std::pair<int, int> Pathfinding::GetNeighbors(const std::pair<int, int>& current, std::queue<std::pair<int, int>>& frontier)
+std::pair<int, int> Pathfinding::GetNeighbors(
+    const std::pair<int, int>& current,
+    std::queue<std::pair<int, int>>& frontier,
+    std::map<std::pair<int, int>, std::pair<int, int> >& cameFrom)
 {
     std::vector<std::pair<int, int>> directions =
         {
@@ -65,6 +70,7 @@ std::pair<int, int> Pathfinding::GetNeighbors(const std::pair<int, int>& current
         {
             frontier.push({newX, newY});
             MarkAsVisited(newX, newY);
+            cameFrom[{newX, newY}] = current;
         }
     }
 
@@ -96,11 +102,35 @@ std::pair<int, int> Pathfinding::GetRandomFrontier(std::queue<std::pair<int, int
     return chosen;
 }
 
+std::vector<std::pair<int,int>> Pathfinding::TrackPath(
+    const std::map<std::pair<int, int>, std::pair<int, int>>& cameFrom,
+    const std::pair<int, int>& start,
+    const std::pair<int, int>& goal)
+{
+    std::vector<std::pair<int, int>> path;
+    std::pair<int, int> current = goal;
+
+    while (current != start)
+    {
+        path.push_back(current);
+        current = cameFrom.at(current);
+    }
+
+    path.push_back(start);
+    std::reverse(path.begin(), path.end());
+
+    return path;
+}
+
+
+
 std::vector<std::pair<int, int>> Pathfinding::GenerateField(int startX, int startY, int endX, int endY)
 {
-    std::cout << "STARTING SEARCH" << std::endl;
+    std::cout << "STARTING SEARCH from (" << startX << "," << startY << ") to (" << endX << "," << endY << ")" << std::endl;
 
     ResetVisited();
+
+    std::map<std::pair<int, int>, std::pair<int, int>> cameFrom;
 
     std::queue<std::pair<int, int>> frontier;
     frontier.push({startX, startY});
@@ -115,10 +145,10 @@ std::vector<std::pair<int, int>> Pathfinding::GenerateField(int startX, int star
         if (current.first == endX && current.second == endY)
         {
             std::cout << "THE CASTLE IS AT (" << current.first << ", " << current.second << ")" << std::endl;
-            return {};
+            return TrackPath(cameFrom, {startX, startY}, {endX, endY});
         }
 
-        GetNeighbors(current, frontier);
+        GetNeighbors(current, frontier, cameFrom);
     }
     return {};
 }
