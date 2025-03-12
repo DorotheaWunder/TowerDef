@@ -31,3 +31,19 @@ void Character::Draw()
     sprite.Draw();
 }
 
+void Character::Update()
+{
+    auto position = gameObject.GetObjectPosition();
+    const float SCALE = 0.3f;
+    const int TILE_WIDTH = 256 * SCALE;
+    const int TILE_HEIGHT = 256 * SCALE;
+
+    sprite.destRect.x = position.second * TILE_WIDTH;
+    sprite.destRect.y = position.first * TILE_HEIGHT;
+}
+
+void Character::MoveTo(int gridPosX, int gridPosY)
+{
+    gameObject.SetObjectPosition(gridPosX, gridPosY);
+    Update();
+}

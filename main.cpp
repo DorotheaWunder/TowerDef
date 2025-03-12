@@ -17,11 +17,9 @@ int main()
 
     int startX = 0, startY = 0;
 
-    Target target();
+    Target castleTarget(Map::COL/2, Map::ROW/2, TargetType::CASTLE);
 
-
-    Terrain castleTarget("../Assets/Textures/Tiles/spritesheetMulti.png", 1400, 100, 256, 384, 0.3f, CASTLE);
-    Character hero("../Assets/Textures/Tiles/spritesheetMulti.png", 400, 100, 256, 384, 0.3f, PLAYER_PALADIN);
+    Character hero("../Assets/Textures/Tiles/spritesheetMulti.png", 0, 0, 256, 384, 0.3f, PLAYER_PALADIN);
 
     while (!WindowShouldClose())
     {
@@ -30,17 +28,24 @@ int main()
         ClearBackground(BLACK);
 
         gameMap.Draw();
+        hero.Draw();
 
-        // castleTarget.Draw();
-        // hero.Draw();
+        if (!pathGenerated)
+        {
+            auto path = pathfinder.GenerateField(startX, startY, castleTarget);
 
-//         if (!pathGenerated)
-//         {
-// //
-//
-//             pathfinder.GenerateField(startX, startY, targetPosition.first, targetPosition.second);
-//             pathGenerated = true;
-//         }
+            for (const auto& point : path)
+            {
+                DrawRectangle(
+                point.second * 256,
+                point.first * 256,
+                256, 256,
+                Color{255, 0, 0, 100}
+                );
+            }
+
+            pathGenerated = true;
+        }
 
         EndDrawing();
     }

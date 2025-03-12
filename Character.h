@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "sprites.h"
 #include "GameObject.h"
-
+#include "Target.h"
 
 
 enum CharacterType
@@ -14,7 +14,7 @@ enum CharacterType
     PLAYER_KING
 };
 
-class Character
+class Character : public ITarget
 {
 public:
     Sprite sprite;
@@ -24,6 +24,25 @@ public:
 
     void Draw();
     void Update();
+    void MoveTo(int gridPosX, int gridPosY);
+
+    std::pair<int, int> GetGridPosition() const override
+    {
+        return gameObject.GetObjectPosition();
+    }
+
+    TargetType GetTargetType() const override
+    {
+        switch (type)
+        {
+        case PLAYER_PALADIN:
+            return TargetType::PLAYER;
+        case PLAYER_KING:
+            return TargetType::KING;
+        default:
+            return TargetType::NONE;
+        }
+    }
 
 
 private:

@@ -1,5 +1,6 @@
 ﻿#include "raylib.h"
 #include "sprites.h"
+#include "Target.h"
 
 #pragma once
 
@@ -14,7 +15,7 @@ enum TerrainType
     WATER
 };
 
-class Terrain
+class Terrain : public ITarget
 {
 public:
     TerrainType type;
@@ -23,6 +24,21 @@ public:
     ~Terrain();
 
     void Draw();
+
+    std::pair<int,int> GetGridPosition() const override
+    {
+        return
+    {
+        static_cast<int>(sprite.destRect.y / (256 * 0.3f)),
+        static_cast<int>(sprite.destRect.x / (256 * 0.3f)),
+        };
+    }
+
+    TargetType GetTargetType() const override
+    {
+        return type == CASTLE ? TargetType::CASTLE : TargetType::NONE;
+    }
+
 
 private:
     Sprite sprite;

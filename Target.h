@@ -19,12 +19,14 @@ public:
     virtual TargetType GetTargetType() const = 0;
 };
 
-class Target
+class Target : public  ITarget
 {
 public:
-    Target(int x, int y, TargetType type);
-    std::pair<int,int> GetGridPosition() const;
-    TargetType GetTargetType() const;
+    Target(int x = 0, int y = 0, TargetType type = TargetType::NONE);
+
+    std::pair<int,int> GetGridPosition() const override;
+    TargetType GetTargetType() const override;
+
     void SetTarget(int x, int y, TargetType type);
 
 private:
