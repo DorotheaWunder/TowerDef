@@ -12,6 +12,7 @@ public:
     Sprite(const char* fileName, int x, int y, int width, int height, float scale);
     ~Sprite();
 
+    void SetColor(Color newColor);
     void Draw();
 
     Rectangle sourceRect;
@@ -20,6 +21,7 @@ public:
 private:
     std::string texturePath;
     Texture2D texture;
+    Color spriteColor = WHITE;
 };
 
 

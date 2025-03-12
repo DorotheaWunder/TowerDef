@@ -1,5 +1,7 @@
 ﻿#include "pathfinding.h"
 #include "target.h"
+#include "sprites.h"
+#include "GameManager.h"
 #include <queue>
 #include <cstdlib>
 #include <ctime>
@@ -133,6 +135,7 @@ std::vector<std::pair<int, int>> Pathfinding::GenerateField(int startX, int star
 
     ResetVisited();
 
+
     std::map<std::pair<int, int>, std::pair<int, int>> cameFrom;
 
     std::queue<std::pair<int, int>> frontier;
@@ -150,6 +153,7 @@ std::vector<std::pair<int, int>> Pathfinding::GenerateField(int startX, int star
         if (current == goalPosition)
         {
             std::cout << "TARGET FOUND at (" << current.first << ", " << current.second << ")" << std::endl;
+
             return TrackPath(cameFrom, {startX, startY}, goalPosition);
         }
 

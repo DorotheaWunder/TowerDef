@@ -27,9 +27,3 @@ void Terrain::SetSourceRect()
 
     sprite.sourceRect = rects[type];
 }
-
-void Terrain::Draw()
-{
-    sprite.Draw();
-}
-

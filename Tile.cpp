@@ -37,8 +37,3 @@ void Tile::RemoveContent()
 {
     content.reset();
 }
-
-void Tile::Draw()
-{
-    terrain->Draw();
-}

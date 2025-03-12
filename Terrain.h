@@ -19,11 +19,10 @@ class Terrain : public ITarget
 {
 public:
     TerrainType type;
+    Sprite sprite;
 
     Terrain(const char* fileName, int x, int y, int width, int height, float scale,  TerrainType type);
     ~Terrain();
-
-    void Draw();
 
     std::pair<int,int> GetGridPosition() const override
     {
@@ -41,7 +40,7 @@ public:
 
 
 private:
-    Sprite sprite;
+
     void SetSourceRect();
 };
 

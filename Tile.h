@@ -17,5 +17,4 @@ public:
     bool CheckContent() const;
     void PlaceContent(std::unique_ptr<GameObject> newContent);
     void RemoveContent();
-    void Draw();
 };

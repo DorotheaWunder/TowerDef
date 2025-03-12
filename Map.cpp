@@ -64,13 +64,13 @@ void Map::CreateMap()
 
 
 
-void Map::Draw()
+void Map::DrawMap()
 {
     for (int y = 0; y < ROW; y++)
     {
         for (int x = 0; x < COL; x++)
         {
-            grid[y][x]->Draw();
+            grid[y][x]->terrain->sprite.Draw();
         }
     }
 }

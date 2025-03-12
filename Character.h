@@ -22,8 +22,7 @@ public:
     Character(const char* fileName, int x, int y, int width, int height, float scale, CharacterType type);
     ~Character();
 
-    void Draw();
-    void Update();
+    void Update();//---probably into game manager later
     void MoveTo(int gridPosX, int gridPosY);
 
     std::pair<int, int> GetGridPosition() const override

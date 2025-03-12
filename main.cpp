@@ -27,8 +27,8 @@ int main()
         BeginDrawing();
         ClearBackground(BLACK);
 
-        gameMap.Draw();
-        hero.Draw();
+        gameMap.DrawMap();
+        hero.sprite.Draw();
 
         if (!pathGenerated)
         {

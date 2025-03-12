@@ -12,7 +12,7 @@ public:
     ~Map();
 
     void CreateMap();
-    void Draw();
+    void DrawMap();
 
 private:
     Tile* grid[ROW][COL];

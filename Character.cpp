@@ -26,11 +26,6 @@ void Character::SetSourceRect()
     sprite.sourceRect = rects[type];
 }
 
-void Character::Draw()
-{
-    sprite.Draw();
-}
-
 void Character::Update()
 {
     auto position = gameObject.GetObjectPosition();

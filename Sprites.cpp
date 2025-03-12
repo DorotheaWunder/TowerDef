@@ -28,8 +28,13 @@ Sprite::~Sprite()
     TextureManager::GetInstance().UnloadTexture(texturePath);
 }
 
+void Sprite::SetColor(Color newColor)
+{
+    spriteColor = newColor;
+}
+
 void Sprite::Draw()
 {
-    DrawTexturePro(texture, sourceRect, destRect, {0,0}, 0.0f, WHITE);
+    DrawTexturePro(texture, sourceRect, destRect, {0,0}, 0.0f, spriteColor);
 }
 
