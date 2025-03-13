@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "target.h"
+#include "GameMap.h"
 #include <vector>
 #include <queue>
 #include <utility>
@@ -8,7 +9,7 @@
 class Pathfinding
 {
 public:
-    Pathfinding(int rows, int cols);
+    Pathfinding(int rows, int cols, GameMap* gameMap);
     std::vector<std::pair<int, int>>GenerateField(int startX, int startY, const Target& target);
 
     std::pair<int, int> GetRandomTile();
@@ -21,9 +22,11 @@ public:
 
     bool IsValidTile(int x, int y);
     void MarkAsVisited(int x, int y);
+    void ChangeTileColor(int row, int col, Color newColor);
     void ResetVisited();
 
 private:
+    GameMap* gameMap;
     int ROW, COL;
     std::vector<std::vector<bool>> wasVisited;
 };

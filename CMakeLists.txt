@@ -36,8 +36,8 @@ add_executable(TowerDef main.cpp
         Terrain.cpp
         Character.h
         Character.cpp
-        Map.h
-        Map.cpp
+        GameMap.h
+        GameMap.cpp
         ResourceManager.h
         Enemy.h
         Enemy.cpp

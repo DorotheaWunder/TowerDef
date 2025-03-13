@@ -81,9 +81,9 @@ build CMakeFiles/TowerDef.dir/Character.cpp.obj: CXX_COMPILER__TowerDef_unscanne
   OBJECT_DIR = CMakeFiles\TowerDef.dir
   OBJECT_FILE_DIR = CMakeFiles\TowerDef.dir
 
-build CMakeFiles/TowerDef.dir/Map.cpp.obj: CXX_COMPILER__TowerDef_unscanned_Debug C$:/CLionProjects/TowerDef/Map.cpp || cmake_object_order_depends_target_TowerDef
+build CMakeFiles/TowerDef.dir/GameMap.cpp.obj: CXX_COMPILER__TowerDef_unscanned_Debug C$:/CLionProjects/TowerDef/GameMap.cpp || cmake_object_order_depends_target_TowerDef
   DEFINES = -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
-  DEP_FILE = CMakeFiles\TowerDef.dir\Map.cpp.obj.d
+  DEP_FILE = CMakeFiles\TowerDef.dir\GameMap.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -IC:/CLionProjects/TowerDef/cmake-build-debug/_deps/raylib-src/src -IC:/CLionProjects/TowerDef/cmake-build-debug/_deps/raylib-src/src/external/glfw/include
   OBJECT_DIR = CMakeFiles\TowerDef.dir
@@ -145,7 +145,7 @@ build CMakeFiles/TowerDef.dir/GameObject.cpp.obj: CXX_COMPILER__TowerDef_unscann
 #############################################
 # Link the executable TowerDef.exe
 
-build TowerDef.exe: CXX_EXECUTABLE_LINKER__TowerDef_Debug CMakeFiles/TowerDef.dir/main.cpp.obj CMakeFiles/TowerDef.dir/Sprites.cpp.obj CMakeFiles/TowerDef.dir/Terrain.cpp.obj CMakeFiles/TowerDef.dir/Character.cpp.obj CMakeFiles/TowerDef.dir/Map.cpp.obj CMakeFiles/TowerDef.dir/Enemy.cpp.obj CMakeFiles/TowerDef.dir/GameManager.cpp.obj CMakeFiles/TowerDef.dir/Pathfinding.cpp.obj CMakeFiles/TowerDef.dir/Target.cpp.obj CMakeFiles/TowerDef.dir/Tile.cpp.obj CMakeFiles/TowerDef.dir/GameObject.cpp.obj | _deps/raylib-build/raylib/libraylib.a || _deps/raylib-build/raylib/external/glfw/src/glfw _deps/raylib-build/raylib/libraylib.a
+build TowerDef.exe: CXX_EXECUTABLE_LINKER__TowerDef_Debug CMakeFiles/TowerDef.dir/main.cpp.obj CMakeFiles/TowerDef.dir/Sprites.cpp.obj CMakeFiles/TowerDef.dir/Terrain.cpp.obj CMakeFiles/TowerDef.dir/Character.cpp.obj CMakeFiles/TowerDef.dir/GameMap.cpp.obj CMakeFiles/TowerDef.dir/Enemy.cpp.obj CMakeFiles/TowerDef.dir/GameManager.cpp.obj CMakeFiles/TowerDef.dir/Pathfinding.cpp.obj CMakeFiles/TowerDef.dir/Target.cpp.obj CMakeFiles/TowerDef.dir/Tile.cpp.obj CMakeFiles/TowerDef.dir/GameObject.cpp.obj | _deps/raylib-build/raylib/libraylib.a || _deps/raylib-build/raylib/external/glfw/src/glfw _deps/raylib-build/raylib/libraylib.a
   FLAGS = -g
   LINK_LIBRARIES = _deps/raylib-build/raylib/libraylib.a  -lopengl32  -lglu32  -lwinmm  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\TowerDef.dir

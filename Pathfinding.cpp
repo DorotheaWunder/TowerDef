@@ -1,6 +1,7 @@
 ﻿#include "pathfinding.h"
 #include "target.h"
 #include "sprites.h"
+#include "GameMap.h"
 #include "GameManager.h"
 #include <queue>
 #include <cstdlib>
@@ -9,10 +10,18 @@
 #include <map>
 #include <algorithm>
 
-Pathfinding::Pathfinding(int rows, int cols)
+Pathfinding::Pathfinding(int rows, int cols, GameMap* gameMap)
     :ROW(rows), COL(cols), wasVisited(rows, std::vector<bool>(cols, false))
 {
     srand(static_cast<unsigned int>(time(0)));
+}
+
+void Pathfinding::ChangeTileColor(int row, int col, Color newColor)
+{
+    if (row >= 0 && row < ROW && col >=0 && col < COL)
+    {
+        gameMap->grid[row][col]->terrain->sprite.SetColor(newColor);
+    }
 }
 
 std::pair<int, int> Pathfinding::GetRandomTile()
@@ -33,8 +42,9 @@ bool Pathfinding::IsValidTile(int x, int y)
 
 void Pathfinding::MarkAsVisited(int x, int y)
 {
-    //---> change sprite color to white
     wasVisited[x][y] = true;
+    //ChangeTileColor(x, y, WHITE);
+    //gameMap->DrawMap();
 }
 
 void Pathfinding::ResetVisited()
@@ -133,7 +143,14 @@ std::vector<std::pair<int, int>> Pathfinding::GenerateField(int startX, int star
           << static_cast<int>(target.GetTargetType()) << " at (" << target.GetGridPosition().first
           << ", " << target.GetGridPosition().second << ")" << std::endl;
 
+    //WaitTime(0.5);
     ResetVisited();
+    std::cout << "-------------------------------------------------------------------->> visited was reset" << std::endl;
+    //ChangeTileColor(startX, startY, YELLOW);
+    std::cout << "-------------------------------------------------------------------->> tile color was changed" << std::endl;
+    //gameMap->DrawMap();
+    std::cout << "-------------------------------------------------------------------->> map was redrawn" << std::endl;
+    //WaitTime(0.2);
 
 
     std::map<std::pair<int, int>, std::pair<int, int>> cameFrom;
@@ -145,15 +162,24 @@ std::vector<std::pair<int, int>> Pathfinding::GenerateField(int startX, int star
 
     std::pair<int, int> goalPosition = target.GetGridPosition();
 
+
+    std::cout << "-------------------------------------------------------------------->> before while loop" << std::endl;
     while (!frontier.empty())
     {
         std::pair<int, int> current = GetRandomFrontier(frontier);
+        //ChangeTileColor(current.first, current.second, ORANGE);
+        //gameMap->DrawMap();
+        // WaitTime(0.2);
+
         frontier.pop();
 
+        std::cout << "---------------------------------------------------------------->> INSIDE while loop" << std::endl;
         if (current == goalPosition)
         {
             std::cout << "TARGET FOUND at (" << current.first << ", " << current.second << ")" << std::endl;
-
+            //ChangeTileColor(current.first, current.second, RED);
+            //gameMap->DrawMap();
+            // WaitTime(0.2);
             return TrackPath(cameFrom, {startX, startY}, goalPosition);
         }
 
@@ -162,3 +188,4 @@ std::vector<std::pair<int, int>> Pathfinding::GenerateField(int startX, int star
     std::cout << "Nothing to find" << std::endl;
     return {};
 }
+
